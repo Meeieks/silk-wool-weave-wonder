@@ -301,6 +301,201 @@
         min-height: 75vh;
       }
     }
+    .contact-form {
+  max-width: 650px;
+  margin: 50px auto 20px;
+  padding: 35px;
+  background: #2b201d;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+.contact-form h3 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #f8f3e8;
+}
+
+.contact-form p {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #eee5d7;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-top: 15px;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #f8f3e8;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #b08a4a;
+  border-radius: 5px;
+  background: #fffaf2;
+  color: #29231f;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  margin-top: 25px;
+  padding: 14px 25px;
+  border: none;
+  border-radius: 5px;
+  background: #b08a4a;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #89632e;
+}
+    .contact-form label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 7px;
+  font-weight: bold;
+  color: #f8f3e8;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #b08a4a;
+  border-radius: 5px;
+  background: #f8f3e8;
+  color: #29231f;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button {
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  background: #b08a4a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #89632e;
+}
+    .contact-form label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 7px;
+  font-weight: bold;
+  color: #f8f3e8;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #b08a4a;
+  border-radius: 5px;
+  background: #f8f3e8;
+  color: #29231f;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button {
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  background: #b08a4a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #89632e;
+}
+    .contact-form label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 7px;
+  font-weight: bold;
+  color: #f8f3e8;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #b08a4a;
+  border-radius: 5px;
+  background: #f8f3e8;
+  color: #29231f;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button {
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  background: #b08a4a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #89632e;
+}
   </style>
 </head>
 
@@ -507,12 +702,53 @@
       </a>
 
     </div>
+    </div>
+
+<div class="contact-form">
+  <h3>Send Us Your Details</h3>
+  <p>Please fill in your details and tell us what you are looking for.</p>
+
+  <form action="https://formsubmit.co/martinlincolnmaps@gmail.com" method="POST">
+
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="Your email address" required>
+
+    <label for="phone">Phone / WhatsApp Number</label>
+    <input type="tel" id="phone" name="phone" placeholder="Your phone or WhatsApp number">
+
+    <label for="location">Your Location</label>
+    <input type="text" id="location" name="location" placeholder="City / Country">
+
+    <label for="carpet">What are you interested in?</label>
+    <select id="carpet" name="carpet">
+      <option value="">Please choose</option>
+      <option value="Persian Carpet">Persian Carpet</option>
+      <option value="Silk Carpet">Silk Carpet</option>
+      <option value="Wool Carpet">Wool Carpet</option>
+      <option value="Carpet Restoration">Carpet Restoration</option>
+      <option value="Carpet Care">Carpet Care</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="message">Tell Us More</label>
+    <textarea id="message" name="message" rows="5"
+      placeholder="Tell us about the carpet you are looking for..."></textarea>
+
+    <button type="submit">Send Enquiry</button>
+
+  </form>
+</div>
+
+</section>
 
   </section>
 
 
   <footer>
-    © 2026 Silk & Wool Weave Wonder · Persian Carpets · Cleaning & Restoration
+    © 2026 Silk & Wool Weave & Wonder · Persian Carpets · Cleaning & Restoration
   </footer>
 
 </body>
