@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Silk & Wool Weave Wonder | Persian Carpets</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f7f4ee;
+      color: #29231f;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #211b18;
+      color: #f8f3e8;
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.18);
+    }
+
+    .logo {
+      font-size: 25px;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #f8f3e8;
+      text-decoration: none;
+      margin-left: 28px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #c9a96e;
+    }
+
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+      background:
+        linear-gradient(rgba(25,20,17,0.68), rgba(25,20,17,0.68)),
+        url("carpet-hero.jpg") center/cover;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.1;
+      margin-bottom: 25px;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 680px;
+      margin: auto;
+      color: #eee5d7;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 14px 30px;
+      background: #a47b3c;
+      color: white;
+      text-decoration: none;
+      border-radius: 3px;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      letter-spacing: .5px;
+    }
+
+    .button:hover {
+      background: #89632e;
+    }
+
+    section {
+      padding: 90px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 55px;
+    }
+
+    .section-title h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+      color: #352822;
+    }
+
+    .section-title p {
+      color: #756b63;
+      font-size: 17px;
+    }
+
+    .about {
+      background: #fffdf9;
+    }
+
+    .about-grid {
+      max-width: 1050px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 29px;
+      margin-bottom: 18px;
+      color: #5b3928;
+    }
+
+    .about-text p {
+      margin-bottom: 17px;
+      color: #5e554f;
+    }
+
+    .about-box {
+      background: #211b18;
+      color: #f7f0e5;
+      padding: 45px;
+      border-left: 5px solid #b28a4d;
+    }
+
+    .about-box h3 {
+      color: #d5b57c;
+      margin-bottom: 15px;
+      font-size: 25px;
+    }
+
+    .services {
+      background: #eee9df;
+    }
+
+    .service-grid {
+      max-width: 1050px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 42px;
+      border-top: 4px solid #a47b3c;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    }
+
+    .service-card h3 {
+      font-size: 28px;
+      color: #4c3024;
+      margin-bottom: 15px;
+    }
+
+    .service-card p {
+      color: #665d57;
+    }
+
+    .note {
+      margin-top: 22px;
+      padding: 18px;
+      background: #f4efe5;
+      border-left: 3px solid #a47b3c;
+      font-size: 15px;
+    }
+
+    .collection {
+      background: #fffdf9;
+    }
+
+    .collection-text {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .collection-text p {
+      color: #625952;
+      margin-bottom: 18px;
+      font-size: 17px;
+    }
+
+    .gallery {
+      max-width: 1100px;
+      margin: 50px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .gallery-item {
+      height: 300px;
+      background: #ddd5c9;
+      overflow: hidden;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .contact {
+      background: #211b18;
+      color: white;
+      text-align: center;
+    }
+
+    .contact .section-title h2 {
+      color: #f8f1e5;
+    }
+
+    .contact .section-title p {
+      color: #d5ccc1;
+    }
+
+    .contact-details {
+      max-width: 700px;
+      margin: auto;
+      font-family: Arial, sans-serif;
+    }
+
+    .contact-details p {
+      margin: 15px 0;
+      font-size: 17px;
+    }
+
+    .contact-details a {
+      color: #d5b57c;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #15110f;
+      color: #a9a19a;
+      text-align: center;
+      padding: 25px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    @media (max-width: 750px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 13px;
+      }
+
+      .about-grid,
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 6%;
+      }
+
+      .hero {
+        min-height: 75vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">Silk & Wool Weave Wonder</div>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#collection">Carpets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Timeless Persian Carpets</h1>
+
+      <p>
+        Beautiful carpets deserve expert care. We offer professional
+        carpet cleaning and restoration, while showcasing distinctive
+        Persian carpets in Cape Town.
+      </p>
+
+      <a class="button" href="#contact">Get in Touch</a>
+    </div>
+  </section>
+
+
+  <section id="about" class="about">
+
+    <div class="section-title">
+      <h2>About Us</h2>
+      <p>
+        Care, craftsmanship and respect for the character of every carpet.
+      </p>
+    </div>
+
+    <div class="about-grid">
+
+      <div class="about-text">
+        <h3>Preserving the Beauty of Every Carpet</h3>
+
+        <p>
+          We specialise in the care and restoration of Persian carpets,
+          treating each piece with the attention and respect it deserves.
+        </p>
+
+        <p>
+          From traditional cleaning to detailed restoration work, our
+          approach is focused on protecting the beauty, character and value
+          of the carpet.
+        </p>
+
+        <p>
+          We also offer a selection of Persian carpets for those looking
+          for something distinctive, traditional and timeless.
+        </p>
+      </div>
+
+      <div class="about-box">
+        <h3>Traditional Craftsmanship</h3>
+
+        <p>
+          Handmade carpets require specialist care. Our services are
+          approached with an understanding of the materials, colours and
+          construction that make each carpet unique.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="services" class="services">
+
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>
+        Professional care for carpets that deserve to be preserved.
+      </p>
+    </div>
+
+    <div class="service-grid">
+
+      <div class="service-card">
+        <h3>Cleaning</h3>
+
+        <p>
+          Traditional carpet cleaning carried out with care and attention
+          to the character of the carpet.
+        </p>
+
+        <div class="note">
+          <strong>N.B.</strong> Handmade carpets need handwashing to help
+          avoid colour run and protect their original character.
+        </div>
+      </div>
+
+
+      <div class="service-card">
+        <h3>Restoration</h3>
+
+        <p>
+          Detailed reweaving and repair work to restore damaged areas and
+          give back the value of the carpet.
+        </p>
+
+        <div class="note">
+          <strong>Restoration:</strong> Reweaving to give back the value
+          of the carpet.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="collection" class="collection">
+
+    <div class="section-title">
+      <h2>Persian Carpet Collection</h2>
+
+      <p>
+        A selection of Persian carpets chosen for their character,
+        craftsmanship and timeless appeal.
+      </p>
+    </div>
+
+    <div class="collection-text">
+
+      <p>
+        Persian carpets are valued for their intricate patterns,
+        distinctive colours and traditional craftsmanship.
+      </p>
+
+      <p>
+        Our collection includes carpets with a variety of traditional
+        designs, making each piece unique in its own way.
+      </p>
+
+    </div>
+
+    <div class="gallery">
+
+      <div class="gallery-item">
+        <img src="carpet-1.jpg" alt="Persian carpet">
+      </div>
+
+      <div class="gallery-item">
+        <img src="carpet-2.jpg" alt="Persian carpet">
+      </div>
+
+      <div class="gallery-item">
+        <img src="carpet-3.jpg" alt="Persian carpet">
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="contact" class="contact">
+
+    <div class="section-title">
+      <h2>Contact Us</h2>
+
+      <p>
+        Based in Cape Town, South Africa.
+        Contact us to discuss your carpet.
+      </p>
+    </div>
+
+    <div class="contact-details">
+
+      <p>
+        <strong>WhatsApp:</strong>
+        <a href="https://wa.me/27671206701" target="_blank">
+          +27 67 120 6701
+        </a>
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:martinlincolnmaps@gmail.com">
+          martinlincolnmaps@gmail.com
+        </a>
+      </p>
+
+      <p>
+        <strong>Location:</strong>
+        Cape Town, South Africa
+      </p>
+
+      <a
+        class="button"
+        href="https://wa.me/27671206701"
+        target="_blank"
+      >
+        WhatsApp Us
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+    © 2026 Silk & Wool Weave Wonder · Persian Carpets · Cleaning & Restoration
+  </footer>
+
+</body>
+</html>
