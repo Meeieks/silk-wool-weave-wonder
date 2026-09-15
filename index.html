@@ -4,891 +4,1702 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  
+  <meta
+    name="description"
+    content="Silk & Wool Weave & Wonder — Persian carpets, professional cleaning and restoration in Cape Town, South Africa."
+  >
+
   <title>Silk & Wool Weave & Wonder | Persian Carpets</title>
 
   <style>
+
+    /* =========================================
+       COLOURS & BASIC SETTINGS
+       ========================================= */
+
+    :root {
+      --ivory: #f7f1e5;
+      --cream: #fbf8f1;
+      --burgundy: #641522;
+      --burgundy-dark: #3f0d16;
+      --gold: #b08a4a;
+      --gold-light: #d5bd83;
+      --text: #332824;
+      --muted: #6f625b;
+      --white: #fffdf8;
+
+      --max-width: 1180px;
+    }
+
+
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
+
 
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
-      font-family: Georgia, "Times New Roman", serif;
-      background: #f7f4ee;
-      color: #29231f;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--cream);
       line-height: 1.7;
     }
 
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    .container {
+      width: 90%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+
+
+    /* =========================================
+       HEADER
+       ========================================= */
+
     header {
-      background: #f7f1e5;
-      color: #f8f3e8;
-      padding: 22px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.18);
+
+      background: rgba(247, 241, 229, 0.98);
+
+      border-bottom: 1px solid rgba(176, 138, 74, 0.45);
+
+      box-shadow:
+        0 4px 18px rgba(40, 18, 14, 0.08);
     }
 
-    .logo {
-      font-size: 25px;
-      letter-spacing: 1px;
-      font-weight: bold;
-    }
 
-    nav a {
-      color: #f8f3e8;
-      text-decoration: none;
-      margin-left: 28px;
-      font-size: 15px;
-    }
+    .header-inner {
+      min-height: 100px;
 
-    nav a:hover {
-      color: #c9a96e;
-    }
-
-    .hero {
-      min-height: 82vh;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 20px;
-      background:
-  linear-gradient(
-    rgba(88, 17, 26, 0.45),
-    rgba(88, 17, 26, 0.45)
-  ),
-  url("carpet-1.png") center / cover;
-      color: white;
-    }
+      justify-content: space-between;
 
-    .hero-content {
-      max-width: 850px;
-    }
-
-    .hero h1 {
-      font-size: clamp(42px, 6vw, 76px);
-      line-height: 1.1;
-      margin-bottom: 25px;
-      letter-spacing: 1px;
-    }
-
-    .hero p {
-      font-size: 20px;
-      max-width: 680px;
-      margin: auto;
-      color: #eee5d7;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 35px;
-      padding: 14px 30px;
-      background: #b08a4a;
-      color: white;
-      text-decoration: none;
-      border-radius: 3px;
-      font-family: Arial, sans-serif;
-      font-weight: bold;
-      letter-spacing: .5px;
-    }
-
-    .button:hover {
-      background: #8f6b32;
-    }
-
-    section {
-      padding: 90px 7%;
-    }
-
-    .section-title {
-      text-align: center;
-      max-width: 750px;
-      margin: 0 auto 55px;
-    }
-
-    .section-title h2 {
-      font-size: 42px;
-      margin-bottom: 15px;
-      color: #352822;
-    }
-
-    .section-title p {
-      color: #756b63;
-      font-size: 17px;
-    }
-
-    .about {
-      background: #fffdf9;
-    }
-
-    .about-grid {
-      max-width: 1050px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 55px;
-      align-items: center;
-    }
-
-    .about-text h3 {
-      font-size: 29px;
-      margin-bottom: 18px;
-      color: #5b3928;
-    }
-
-    .about-text p {
-      margin-bottom: 17px;
-      color: #5e554f;
-    }
-
-    .about-box {
-      background: #211b18;
-      color: #f7f0e5;
-      padding: 45px;
-      border-left: 5px solid #b28a4d;
-    }
-
-    .about-box h3 {
-      color: #d5b57c;
-      margin-bottom: 15px;
-      font-size: 25px;
-    }
-
-    .services {
-      background: #eee9df;
-    }
-
-    .service-grid {
-      max-width: 1050px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
       gap: 30px;
     }
 
-    .service-card {
-      background: white;
-      padding: 42px;
-      border-top: 4px solid #a47b3c;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+
+    .logo img {
+      width: 175px;
+      height: auto;
     }
 
-    .service-card h3 {
-      font-size: 28px;
-      color: #4c3024;
-      margin-bottom: 15px;
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
     }
 
-    .service-card p {
-      color: #665d57;
+
+    nav a {
+      color: var(--burgundy);
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 17px;
+      font-weight: 600;
+
+      position: relative;
+
+      padding: 8px 0;
     }
 
-    .note {
-      margin-top: 22px;
-      padding: 18px;
-      background: #f4efe5;
-      border-left: 3px solid #a47b3c;
-      font-size: 15px;
+
+    nav a::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: 1px;
+
+      width: 0;
+      height: 1px;
+
+      background: var(--gold);
+
+      transition: width 0.25s ease;
     }
 
-    .collection {
-      background: #fffdf9;
+
+    nav a:hover::after {
+      width: 100%;
     }
 
-    .collection-text {
+
+    .menu-toggle {
+      display: none;
+
+      color: var(--burgundy);
+
+      font-size: 13px;
+      font-weight: bold;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      cursor: pointer;
+    }
+
+
+
+    /* =========================================
+       HERO
+       ========================================= */
+
+    .hero {
+      min-height: 680px;
+
+      display: grid;
+      place-items: center;
+
+      text-align: center;
+
+      color: var(--white);
+
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          rgba(63, 13, 22, 0.56),
+          rgba(63, 13, 22, 0.68)
+        ),
+        url("carpet-1.png")
+        center / cover no-repeat;
+    }
+
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 18px;
+
+      border: 1px solid rgba(213, 189, 131, 0.55);
+
+      pointer-events: none;
+    }
+
+
+    .hero-content {
+      width: 88%;
       max-width: 850px;
-      margin: auto;
+
+      position: relative;
+      z-index: 1;
+
+      padding: 70px 0;
+    }
+
+
+    .eyebrow {
+      color: var(--gold-light);
+
+      font-size: 13px;
+      font-weight: bold;
+
+      letter-spacing: 4px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 20px;
+    }
+
+
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: clamp(58px, 8vw, 112px);
+
+      line-height: 0.9;
+
+      font-weight: 600;
+
+      letter-spacing: -3px;
+
+      margin-bottom: 30px;
+    }
+
+
+    .hero h1 span {
+      display: block;
+    }
+
+
+    .hero p {
+      max-width: 720px;
+
+      margin: 0 auto 35px;
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 22px;
+
+      line-height: 1.5;
+    }
+
+
+    .button {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 15px 28px;
+
+      border: 1px solid var(--gold);
+
+      background: var(--burgundy);
+
+      color: var(--white);
+
+      font-size: 13px;
+      font-weight: bold;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+      transition: 0.25s ease;
+    }
+
+
+    .button:hover {
+      background: var(--gold);
+
+      border-color: var(--gold);
+
+      color: var(--burgundy-dark);
+
+      transform: translateY(-2px);
+    }
+
+
+
+    /* =========================================
+       GENERAL SECTIONS
+       ========================================= */
+
+    section {
+      padding: 105px 0;
+    }
+
+
+    .section-heading {
+      max-width: 760px;
+
+      margin-bottom: 55px;
+    }
+
+
+    .section-heading.center {
+      margin-left: auto;
+      margin-right: auto;
+
       text-align: center;
     }
 
-    .collection-text p {
-      color: #625952;
-      margin-bottom: 18px;
+
+    .section-label {
+      color: var(--gold);
+
+      font-size: 12px;
+      font-weight: bold;
+
+      letter-spacing: 4px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 14px;
+    }
+
+
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+
+      color: var(--burgundy);
+
+      font-size: clamp(44px, 5vw, 70px);
+
+      line-height: 0.98;
+
+      font-weight: 600;
+
+      margin-bottom: 22px;
+    }
+
+
+    .lead {
+      color: var(--muted);
+
       font-size: 17px;
+
+      max-width: 700px;
     }
 
-    .gallery {
-      max-width: 1100px;
-      margin: 50px auto 0;
+
+
+    /* =========================================
+       ABOUT
+       ========================================= */
+
+    .about {
+      background: var(--cream);
+    }
+
+
+    .about-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 75px;
+
+      align-items: center;
     }
 
-    .gallery-item {
-      height: 300px;
-      background: #ddd5c9;
+
+    .image-placeholder {
+      min-height: 560px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(100, 21, 34, 0.95),
+          rgba(63, 13, 22, 0.95)
+        );
+
+      position: relative;
+
+      display: grid;
+
+      place-items: center;
+
       overflow: hidden;
     }
+
+
+    .image-placeholder::before {
+      content: "CARPET PHOTOGRAPH";
+
+      color: rgba(255, 253, 248, 0.6);
+
+      font-size: 12px;
+
+      letter-spacing: 3px;
+    }
+
+
+    .image-placeholder::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 18px;
+
+      border: 1px solid rgba(213, 189, 131, 0.5);
+    }
+
+
+    .about-copy p {
+      color: var(--muted);
+
+      margin-bottom: 22px;
+
+      font-size: 16px;
+    }
+
+
+    .signature {
+      color: var(--burgundy);
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 24px;
+
+      margin-top: 30px;
+    }
+
+
+
+    /* =========================================
+       SERVICES
+       ========================================= */
+
+    .services {
+      background: var(--ivory);
+
+      border-top: 1px solid rgba(100, 21, 34, 0.12);
+
+      border-bottom: 1px solid rgba(100, 21, 34, 0.12);
+    }
+
+
+    .services-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 24px;
+    }
+
+
+    .service-card {
+      background: var(--white);
+
+      padding: 42px 34px;
+
+      border-top: 3px solid var(--gold);
+
+      box-shadow:
+        0 18px 45px rgba(54, 25, 18, 0.10);
+    }
+
+
+    .service-number {
+      color: var(--gold);
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 32px;
+
+      margin-bottom: 20px;
+    }
+
+
+    .service-card h3 {
+      color: var(--burgundy);
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 32px;
+
+      line-height: 1;
+
+      margin-bottom: 16px;
+    }
+
+
+    .service-card p {
+      color: var(--muted);
+
+      font-size: 15px;
+    }
+
+
+
+    /* =========================================
+       CARPET COLLECTION
+       ========================================= */
+
+    .collection {
+      background: var(--cream);
+    }
+
+
+    .gallery {
+      display: grid;
+
+      grid-template-columns: 1.4fr 1fr 1fr;
+
+      grid-template-rows: 270px 270px;
+
+      gap: 16px;
+    }
+
+
+    .gallery-item {
+      position: relative;
+
+      overflow: hidden;
+
+      background: var(--burgundy-dark);
+
+      min-height: 200px;
+    }
+
+
+    .gallery-item:first-child {
+      grid-row: 1 / 3;
+    }
+
 
     .gallery-item img {
       width: 100%;
       height: 100%;
+
       object-fit: cover;
-      display: block;
     }
+
+
+    .gallery-placeholder {
+      height: 100%;
+      min-height: 200px;
+
+      display: grid;
+      place-items: center;
+
+      text-align: center;
+
+      padding: 25px;
+
+      color: rgba(255, 253, 248, 0.75);
+
+      border: 1px solid rgba(213, 189, 131, 0.25);
+
+      background:
+        linear-gradient(
+          145deg,
+          #641522,
+          #3f0d16
+        );
+    }
+
+
+    .gallery-placeholder span {
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 22px;
+    }
+
+
+    .collection-note {
+      text-align: center;
+
+      color: var(--muted);
+
+      margin-top: 30px;
+    }
+
+
+
+    /* =========================================
+       RESTORATION
+       ========================================= */
+
+    .restoration {
+      background: var(--burgundy);
+
+      color: var(--white);
+    }
+
+
+    .restoration h2 {
+      color: var(--white);
+    }
+
+
+    .restoration .section-label {
+      color: var(--gold-light);
+    }
+
+
+    .restoration .lead {
+      color: rgba(255, 253, 248, 0.78);
+    }
+
+
+    .restoration-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 24px;
+
+      margin-top: 55px;
+    }
+
+
+    .before-after {
+      min-height: 410px;
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      background: var(--burgundy-dark);
+
+      border: 1px solid rgba(213, 189, 131, 0.35);
+    }
+
+
+    .before-after > div {
+      display: grid;
+
+      place-items: center;
+
+      text-align: center;
+
+      padding: 25px;
+
+      min-height: 410px;
+    }
+
+
+    .before {
+      border-right: 1px solid rgba(213, 189, 131, 0.3);
+    }
+
+
+    .placeholder-label {
+      color: rgba(255, 253, 248, 0.7);
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 23px;
+    }
+
+
+    .restoration-copy {
+      padding: 25px 20px 25px 40px;
+    }
+
+
+    .restoration-copy h3 {
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 38px;
+
+      line-height: 1.05;
+
+      margin-bottom: 20px;
+    }
+
+
+    .restoration-copy p {
+      color: rgba(255, 253, 248, 0.78);
+
+      margin-bottom: 20px;
+    }
+
+
+
+    /* =========================================
+       CONTACT
+       ========================================= */
 
     .contact {
-      background: #211b18;
-      color: white;
+      background: var(--ivory);
+
       text-align: center;
     }
 
-    .contact .section-title h2 {
-      color: #f8f1e5;
+
+    .contact-box {
+      max-width: 900px;
+
+      margin: 0 auto;
+
+      padding: 75px 40px;
+
+      border: 1px solid rgba(176, 138, 74, 0.55);
+
+      background: var(--cream);
     }
 
-    .contact .section-title p {
-      color: #d5ccc1;
+
+    .contact-box h2 {
+      margin-bottom: 20px;
     }
+
+
+    .contact-box p {
+      max-width: 650px;
+
+      margin: 0 auto 30px;
+
+      color: var(--muted);
+    }
+
 
     .contact-details {
-      max-width: 700px;
-      margin: auto;
-      font-family: Arial, sans-serif;
-    }
+      display: flex;
 
-    .contact-details p {
-      margin: 15px 0;
-      font-size: 17px;
-    }
+      justify-content: center;
 
-    .contact-details a {
-      color: #d5b57c;
-      text-decoration: none;
-    }
+      gap: 35px;
 
-    footer {
-      background: #15110f;
-      color: #a9a19a;
-      text-align: center;
-      padding: 25px;
-      font-family: Arial, sans-serif;
+      flex-wrap: wrap;
+
+      margin-top: 30px;
+
+      color: var(--burgundy);
+
       font-size: 14px;
     }
 
-    @media (max-width: 750px) {
-      header {
-        flex-direction: column;
-        gap: 15px;
+
+
+    /* =========================================
+       FOOTER
+       ========================================= */
+
+    footer {
+      background: var(--burgundy-dark);
+
+      color: var(--white);
+
+      padding: 55px 0 25px;
+    }
+
+
+    .footer-main {
+      display: grid;
+
+      grid-template-columns: 1fr auto;
+
+      gap: 40px;
+
+      align-items: center;
+
+      padding-bottom: 35px;
+
+      border-bottom: 1px solid rgba(213, 189, 131, 0.25);
+    }
+
+
+    .footer-brand {
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 30px;
+
+      color: var(--white);
+    }
+
+
+    .footer-subtitle {
+      color: var(--gold-light);
+
+      font-size: 11px;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      margin-top: 6px;
+    }
+
+
+    .footer-nav {
+      display: flex;
+
+      gap: 25px;
+
+      flex-wrap: wrap;
+
+      justify-content: flex-end;
+    }
+
+
+    .footer-nav a {
+      color: rgba(255, 253, 248, 0.78);
+
+      font-size: 14px;
+    }
+
+
+    .footer-bottom {
+      padding-top: 22px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      color: rgba(255, 253, 248, 0.5);
+
+      font-size: 12px;
+    }
+
+
+
+    /* =========================================
+       MOBILE
+       ========================================= */
+
+    @media (max-width: 850px) {
+
+      .header-inner {
+        min-height: 82px;
       }
 
-      nav a {
-        margin: 0 8px;
-        font-size: 13px;
+
+      .logo img {
+        width: 145px;
       }
+
+
+      .menu-toggle {
+        display: block;
+      }
+
+
+      nav {
+        display: none;
+
+        position: absolute;
+
+        top: 82px;
+
+        left: 0;
+        right: 0;
+
+        padding: 20px 7%;
+
+        background: var(--ivory);
+
+        border-bottom: 1px solid rgba(100, 21, 34, 0.15);
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+      }
+
+
+      #menu-check:checked ~ nav {
+        display: flex;
+      }
+
 
       .about-grid,
-      .service-grid {
+      .restoration-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+      }
+
+
+      .services-grid {
         grid-template-columns: 1fr;
       }
+
 
       .gallery {
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-rows:
+          300px
+          220px
+          220px;
+      }
+
+
+      .gallery-item:first-child {
+        grid-column: 1 / 3;
+
+        grid-row: auto;
+      }
+
+
+      .restoration-copy {
+        padding: 20px 0;
+      }
+
+
+      .footer-main {
         grid-template-columns: 1fr;
       }
 
-      section {
-        padding: 65px 6%;
+
+      .footer-nav {
+        justify-content: flex-start;
       }
+
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+    }
+
+
+
+    @media (max-width: 560px) {
+
+      section {
+        padding: 75px 0;
+      }
+
 
       .hero {
-        min-height: 75vh;
+        min-height: 620px;
       }
+
+
+      .hero::after {
+        inset: 10px;
+      }
+
+
+      .hero h1 {
+        font-size: 54px;
+
+        letter-spacing: -2px;
+      }
+
+
+      .hero p {
+        font-size: 19px;
+      }
+
+
+      .gallery {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        grid-template-rows: auto;
+      }
+
+
+      .gallery-item:first-child {
+        grid-column: auto;
+      }
+
+
+      .gallery-item,
+      .gallery-placeholder {
+        min-height: 280px;
+      }
+
+
+      .before-after {
+        grid-template-columns: 1fr;
+      }
+
+
+      .before {
+        border-right: 0;
+
+        border-bottom:
+          1px solid rgba(213, 189, 131, 0.3);
+      }
+
+
+      .contact-box {
+        padding: 50px 22px;
+      }
+
     }
-    .contact-form {
-  max-width: 650px;
-  margin: 50px auto 20px;
-  padding: 35px;
-  background: #2b201d;
-  border-radius: 10px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-}
 
-.contact-form h3 {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 10px;
-  color: #f8f3e8;
-}
-
-.contact-form p {
-  text-align: center;
-  margin-bottom: 25px;
-  color: #eee5d7;
-}
-
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-form label {
-  margin-top: 15px;
-  margin-bottom: 6px;
-  font-weight: bold;
-  color: #f8f3e8;
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  width: 100%;
-  padding: 13px;
-  border: 1px solid #b08a4a;
-  border-radius: 5px;
-  background: #fffaf2;
-  color: #29231f;
-  font-family: Arial, sans-serif;
-  font-size: 15px;
-}
-
-.contact-form textarea {
-  resize: vertical;
-}
-
-.contact-form button {
-  margin-top: 25px;
-  padding: 14px 25px;
-  border: none;
-  border-radius: 5px;
-  background: #b08a4a;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.contact-form button:hover {
-  background: #89632e;
-}
-    .contact-form label {
-  display: block;
-  margin-top: 18px;
-  margin-bottom: 7px;
-  font-weight: bold;
-  color: #f8f3e8;
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  width: 100%;
-  padding: 13px;
-  border: 1px solid #b08a4a;
-  border-radius: 5px;
-  background: #f8f3e8;
-  color: #29231f;
-  font-family: inherit;
-  font-size: 16px;
-}
-
-.contact-form textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.contact-form button {
-  display: block;
-  width: 100%;
-  margin-top: 25px;
-  padding: 14px;
-  background: #b08a4a;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.contact-form button:hover {
-  background: #89632e;
-}
-    .contact-form label {
-  display: block;
-  margin-top: 18px;
-  margin-bottom: 7px;
-  font-weight: bold;
-  color: #f8f3e8;
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  width: 100%;
-  padding: 13px;
-  border: 1px solid #b08a4a;
-  border-radius: 5px;
-  background: #f8f3e8;
-  color: #29231f;
-  font-family: inherit;
-  font-size: 16px;
-}
-
-.contact-form textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.contact-form button {
-  display: block;
-  width: 100%;
-  margin-top: 25px;
-  padding: 14px;
-  background: #b08a4a;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.contact-form button:hover {
-  background: #89632e;
-}
-    .contact-form label {
-  display: block;
-  margin-top: 18px;
-  margin-bottom: 7px;
-  font-weight: bold;
-  color: #f8f3e8;
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  width: 100%;
-  padding: 13px;
-  border: 1px solid #b08a4a;
-  border-radius: 5px;
-  background: #f8f3e8;
-  color: #29231f;
-  font-family: inherit;
-  font-size: 16px;
-}
-
-.contact-form textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.contact-form button {
-  display: block;
-  width: 100%;
-  margin-top: 25px;
-  padding: 14px;
-  background: #b08a4a;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.contact-form button:hover {
-  background: #89632e;
-}
-    /* ===== PERSIAN LUXURY COLOUR THEME ===== */
-
-:root {
-  --burgundy: #58111A;
-  --brick-red: #8B0000;
-  --terracotta: #C04000;
-  --ivory: #F7F0E3;
-  --gold: #C9A24A;
-  --dark-text: #2B1B16;
-}
-
-/* Overall page */
-body {
-  background: var(--ivory);
-  color: var(--dark-text);
-}
-
-/* Header */
-header {
-  background: var(--burgundy);
-  color: var(--ivory);
-}
-
-/* Logo */
-.logo {
-  color: var(--ivory);
-}
-
-/* Navigation */
-nav a {
-  color: var(--ivory);
-}
-
-nav a:hover {
-  color: var(--gold);
-}
-
-/* Hero section */
-.hero {
- background:
-  linear-gradient(
-    rgba(88, 17, 26, 0.45),
-    rgba(88, 17, 26, 0.45)
-  ),
-  url("carpet-1.png") center / cover;
-  color: var(--ivory);
-}
-
-/* Hero headings */
-.hero h1,
-.hero h2,
-.hero h3 {
-  color: var(--ivory);
-}
-
-/* Hero paragraph */
-.hero p {
-  color: #F7F0E3;
-}
-
-/* Main headings */
-section h2,
-section h3 {
-  color: var(--burgundy);
-}
-
-/* Buttons */
-button,
-.hero a,
-.contact-form button {
-  background: var(--terracotta);
-  color: white;
-  border: none;
-}
-
-button:hover,
-.hero a:hover,
-.contact-form button:hover {
-  background: var(--gold);
-  color: var(--dark-text);
-}
-
-/* Service / content cards */
-.card,
-.service-card {
-  background: #FFFFFF;
-  border-color: #D8C6A8;
-}
-
-/* Links */
-a {
-  color: var(--brick-red);
-}
-
-a:hover {
-  color: var(--terracotta);
-}
-
-/* Contact form */
-.contact-form {
-  background: var(--burgundy);
-  color: var(--ivory);
-}
-
-.contact-form h3 {
-  color: var(--ivory);
-}
-
-.contact-form label {
-  color: var(--ivory);
-}
-
-/* Form fields */
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  background: var(--ivory);
-  color: var(--dark-text);
-  border: 1px solid var(--gold);
-}
-/* Make the logo small */
-.logo img {
-  height: 95px;
-  width: auto;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-/* Footer */
-footer {
-  background: var(--burgundy);
-  color: var(--ivory);
-}
-
-/* Gold decorative accents */
-.logo,
-section h2 {
-  text-decoration-color: var(--gold);
-}
   </style>
 </head>
 
+
 <body>
 
+
+  <!-- ======================================
+       HEADER
+       ====================================== -->
+
   <header>
-<div class="logo"><img src="silk-removebg-preview.png" alt="Silk & Wool Weave & Wonder"></div>    <nav>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#collection">Carpets</a>
-      <a href="#contact">Contact</a>
-    </nav>
+
+    <div class="container header-inner">
+
+      <a
+        class="logo"
+        href="#top"
+        aria-label="Silk & Wool Weave & Wonder home"
+      >
+        <img
+          src="silk-removebg-preview.png"
+          alt="Silk & Wool Weave & Wonder"
+        >
+      </a>
+
+
+      <label
+        class="menu-toggle"
+        for="menu-check"
+      >
+        Menu
+      </label>
+
+
+      <input
+        id="menu-check"
+        type="checkbox"
+        hidden
+      >
+
+
+      <nav>
+
+        <a href="#about">About</a>
+
+        <a href="#services">Services</a>
+
+        <a href="#collection">Carpets</a>
+
+        <a href="#restoration">Restoration</a>
+
+        <a href="#contact">Contact</a>
+
+      </nav>
+
+    </div>
+
   </header>
 
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Timeless Persian Carpets</h1>
 
-      <p>
-        Beautiful carpets deserve expert care. We offer professional
-        carpet cleaning and restoration, while showcasing distinctive
-        Persian carpets in Cape Town.
-      </p>
-
-      <a class="button" href="#contact">Get in Touch</a>
-    </div>
-  </section>
+  <main id="top">
 
 
-  <section id="about" class="about">
+    <!-- ======================================
+         HERO
+         ====================================== -->
 
-    <div class="section-title">
-      <h2>About Us</h2>
-      <p>
-        Care, craftsmanship and respect for the character of every carpet.
-      </p>
-    </div>
+    <section class="hero">
 
-    <div class="about-grid">
+      <div class="hero-content">
 
-      <div class="about-text">
-        <h3>Preserving the Beauty of Every Carpet</h3>
-
-        <p>
-          We specialise in the care and restoration of Persian carpets,
-          treating each piece with the attention and respect it deserves.
-        </p>
-
-        <p>
-          From traditional cleaning to detailed restoration work, our
-          approach is focused on protecting the beauty, character and value
-          of the carpet.
-        </p>
-
-        <p>
-          We also offer a selection of Persian carpets for those looking
-          for something distinctive, traditional and timeless.
-        </p>
-      </div>
-
-      <div class="about-box">
-        <h3>Traditional Craftsmanship</h3>
-
-        <p>
-          Handmade carpets require specialist care. Our services are
-          approached with an understanding of the materials, colours and
-          construction that make each carpet unique.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-
-  <section id="services" class="services">
-
-    <div class="section-title">
-      <h2>Our Services</h2>
-      <p>
-        Professional care for carpets that deserve to be preserved.
-      </p>
-    </div>
-
-    <div class="service-grid">
-
-      <div class="service-card">
-        <h3>Cleaning</h3>
-
-        <p>
-          Traditional carpet cleaning carried out with care and attention
-          to the character of the carpet.
-        </p>
-
-        <div class="note">
-          <strong>N.B.</strong> Handmade carpets need handwashing to help
-          avoid colour run and protect their original character.
+        <div class="eyebrow">
+          Persian Carpets · Cleaning · Restoration
         </div>
-      </div>
 
 
-      <div class="service-card">
-        <h3>Restoration</h3>
+        <h1>
+
+          <span>Timeless</span>
+
+          <span>Persian Carpets</span>
+
+        </h1>
+
 
         <p>
-          Detailed reweaving and repair work to restore damaged areas and
-          give back the value of the carpet.
+          Beautiful carpets deserve expert care.
+          Discover distinctive Persian carpets and
+          professional cleaning and restoration in Cape Town.
         </p>
 
-        <div class="note">
-          <strong>Restoration:</strong> Reweaving to give back the value
-          of the carpet.
+
+        <a
+          class="button"
+          href="#contact"
+        >
+          Enquire With Us
+        </a>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         ABOUT
+         ====================================== -->
+
+    <section
+      class="about"
+      id="about"
+    >
+
+      <div class="container about-grid">
+
+
+        <div
+          class="image-placeholder"
+          aria-label="Carpet photograph placeholder"
+        ></div>
+
+
+        <div class="about-copy">
+
+          <div class="section-label">
+            The Art of the Persian Carpet
+          </div>
+
+
+          <h2>
+            More Than a Carpet.
+            <br>
+            A Piece of History.
+          </h2>
+
+
+          <p>
+            Persian carpets are more than floor coverings.
+            They are expressions of craftsmanship,
+            tradition and character, often carrying stories
+            that span generations.
+          </p>
+
+
+          <p>
+            At <strong>
+              Silk &amp; Wool Weave &amp; Wonder
+            </strong>,
+            we believe these pieces deserve to be treated
+            with knowledge and care — whether you are
+            looking to acquire a distinctive carpet,
+            have one professionally cleaned, or restore
+            a treasured piece.
+          </p>
+
+
+          <p>
+            We are based in Cape Town and are committed
+            to giving every carpet the attention it deserves.
+          </p>
+
+
+          <div class="signature">
+            Silk &amp; Wool Weave &amp; Wonder
+          </div>
+
         </div>
+
       </div>
 
-    </div>
-  </section>
+    </section>
 
 
-  <section id="collection" class="collection">
 
-    <div class="section-title">
-      <h2>Persian Carpet Collection</h2>
+    <!-- ======================================
+         SERVICES
+         ====================================== -->
 
-      <p>
-        A selection of Persian carpets chosen for their character,
-        craftsmanship and timeless appeal.
-      </p>
-    </div>
+    <section
+      class="services"
+      id="services"
+    >
 
-    <div class="collection-text">
+      <div class="container">
 
-      <p>
-        Persian carpets are valued for their intricate patterns,
-        distinctive colours and traditional craftsmanship.
-      </p>
 
-      <p>
-        Our collection includes carpets with a variety of traditional
-        designs, making each piece unique in its own way.
-      </p>
+        <div class="section-heading center">
 
-    </div>
+          <div class="section-label">
+            What We Do
+          </div>
 
-    <div class="gallery">
 
-      <div class="gallery-item">
-<img src="carpet-1.png" alt="Persian carpet">      </div>
+          <h2>
+            Care, Craftsmanship &amp; Character
+          </h2>
 
-      <div class="gallery-item">
-        <img src="carpet-2.jpg" alt="Persian carpet">
+
+          <p class="lead">
+            From everyday care to delicate restoration,
+            our services are centred around preserving
+            the beauty and character of Persian carpets.
+          </p>
+
+        </div>
+
+
+
+        <div class="services-grid">
+
+
+          <article class="service-card">
+
+            <div class="service-number">
+              01
+            </div>
+
+
+            <h3>
+              Professional Cleaning
+            </h3>
+
+
+            <p>
+              Careful carpet cleaning designed around
+              the fibre, age and condition of each
+              individual carpet.
+            </p>
+
+          </article>
+
+
+
+          <article class="service-card">
+
+            <div class="service-number">
+              02
+            </div>
+
+
+            <h3>
+              Restoration &amp; Repair
+            </h3>
+
+
+            <p>
+              Thoughtful restoration for worn, damaged
+              or ageing carpets, with attention to
+              preserving their original character.
+            </p>
+
+          </article>
+
+
+
+          <article class="service-card">
+
+            <div class="service-number">
+              03
+            </div>
+
+
+            <h3>
+              Persian Carpets
+            </h3>
+
+
+            <p>
+              A curated collection of distinctive
+              Persian carpets selected for craftsmanship,
+              beauty and individuality.
+            </p>
+
+          </article>
+
+
+        </div>
+
       </div>
 
-      <div class="gallery-item">
-        <img src="carpet-3.jpg" alt="Persian carpet">
+    </section>
+
+
+
+    <!-- ======================================
+         CARPET COLLECTION
+         ====================================== -->
+
+    <section
+      class="collection"
+      id="collection"
+    >
+
+      <div class="container">
+
+
+        <div class="section-heading">
+
+          <div class="section-label">
+            The Collection
+          </div>
+
+
+          <h2>
+            Selected Persian Pieces
+          </h2>
+
+
+          <p class="lead">
+            Our collection will be shown here as the
+            carpet photography becomes available.
+            Each piece will have room to speak for itself.
+          </p>
+
+        </div>
+
+
+
+        <div class="gallery">
+
+
+          <!-- EXISTING CARPET PHOTO -->
+
+          <div class="gallery-item">
+
+            <img
+              src="carpet-1.png"
+              alt="Persian carpet"
+            >
+
+          </div>
+
+
+
+          <!-- PHOTO PLACEHOLDER -->
+
+          <div class="gallery-item">
+
+            <div class="gallery-placeholder">
+
+              <span>
+                Carpet photograph
+                <br>
+                coming soon
+              </span>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- PHOTO PLACEHOLDER -->
+
+          <div class="gallery-item">
+
+            <div class="gallery-placeholder">
+
+              <span>
+                Carpet photograph
+                <br>
+                coming soon
+              </span>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- PHOTO PLACEHOLDER -->
+
+          <div class="gallery-item">
+
+            <div class="gallery-placeholder">
+
+              <span>
+                Carpet photograph
+                <br>
+                coming soon
+              </span>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- PHOTO PLACEHOLDER -->
+
+          <div class="gallery-item">
+
+            <div class="gallery-placeholder">
+
+              <span>
+                Carpet photograph
+                <br>
+                coming soon
+              </span>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+        <p class="collection-note">
+          More pieces will be added to the collection.
+        </p>
+
       </div>
 
-    </div>
-
-  </section>
+    </section>
 
 
-  <section id="contact" class="contact">
 
-    <div class="section-title">
-      <h2>Contact Us</h2>
+    <!-- ======================================
+         RESTORATION
+         ====================================== -->
 
-      <p>
-        Based in Cape Town, South Africa.
-        Contact us to discuss your carpet.
-      </p>
-    </div>
+    <section
+      class="restoration"
+      id="restoration"
+    >
 
-    <div class="contact-details">
+      <div class="container">
 
-      <p>
-        <strong>WhatsApp:</strong>
-        <a href="https://wa.me/27671206701" target="_blank">
-          +27 67 120 6701
-        </a>
-      </p>
 
-      <p>
-        <strong>Email:</strong>
-        <a href="mailto:martinlincolnmaps@gmail.com">
-          martinlincolnmaps@gmail.com
-        </a>
-      </p>
+        <div class="section-heading">
 
-      <p>
-        <strong>Location:</strong>
-        Cape Town, South Africa
-      </p>
+          <div class="section-label">
+            Restoration
+          </div>
 
-      <a
-        class="button"
-        href="https://wa.me/27671206701"
-        target="_blank"
-      >
-        WhatsApp Us
-      </a>
 
-    </div>
-    </div>
+          <h2>
+            Preserving What Matters
+          </h2>
 
-<div class="contact-form">
-  <h3>Send Us Your Details</h3>
-  <p>Please fill in your details and tell us what you are looking for.</p>
 
-  <form action="https://formsubmit.co/martinlincolnmaps@gmail.com" method="POST">
+          <p class="lead">
+            Every carpet has a story. Our restoration
+            section will showcase real examples of
+            damaged pieces brought back to life.
+          </p>
 
-    <label for="name">Full Name</label>
-    <input type="text" id="name" name="name" placeholder="Your full name" required>
+        </div>
 
-    <label for="email">Email Address</label>
-    <input type="email" id="email" name="email" placeholder="Your email address" required>
 
-    <label for="phone">Phone / WhatsApp Number</label>
-    <input type="tel" id="phone" name="phone" placeholder="Your phone or WhatsApp number">
 
-    <label for="location">Your Location</label>
-    <input type="text" id="location" name="location" placeholder="City / Country">
+        <div class="restoration-grid">
 
-    <label for="carpet">What are you interested in?</label>
-    <select id="carpet" name="carpet">
-      <option value="">Please choose</option>
-      <option value="Persian Carpet">Persian Carpet</option>
-      <option value="Silk Carpet">Silk Carpet</option>
-      <option value="Wool Carpet">Wool Carpet</option>
-      <option value="Carpet Restoration">Carpet Restoration</option>
-      <option value="Carpet Care">Carpet Care</option>
-      <option value="Other">Other</option>
-    </select>
 
-    <label for="message">Tell Us More</label>
-    <textarea id="message" name="message" rows="5"
-      placeholder="Tell us about the carpet you are looking for..."></textarea>
+          <div class="before-after">
 
-    <button type="submit">Send Enquiry</button>
 
-  </form>
-</div>
+            <div class="before">
 
-</section>
+              <div class="placeholder-label">
 
-  </section>
+                Before
 
+                <br>
+
+                <small>
+                  Restoration photograph
+                </small>
+
+              </div>
+
+            </div>
+
+
+
+            <div>
+
+              <div class="placeholder-label">
+
+                After
+
+                <br>
+
+                <small>
+                  Restoration photograph
+                </small>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+
+          <div class="restoration-copy">
+
+            <h3>
+              Traditional Care.
+              Thoughtful Restoration.
+            </h3>
+
+
+            <p>
+              Persian carpets can be delicate,
+              valuable and deeply personal.
+              Restoration should respect the original
+              piece rather than erase its history.
+            </p>
+
+
+            <p>
+              This area will eventually feature the
+              company's real restoration photographs
+              and videos, giving visitors a closer look
+              at the work behind each restoration.
+            </p>
+
+
+            <a
+              class="button"
+              href="#contact"
+            >
+              Ask About Restoration
+            </a>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         CONTACT
+         ====================================== -->
+
+    <section
+      class="contact"
+      id="contact"
+    >
+
+      <div class="container">
+
+
+        <div class="contact-box">
+
+          <div class="section-label">
+            Get In Touch
+          </div>
+
+
+          <h2>
+            Have a Carpet That Needs Care?
+          </h2>
+
+
+          <p>
+            Whether you are looking for a Persian
+            carpet, need professional cleaning, or
+            have a treasured piece that requires
+            restoration, we'd be happy to hear from you.
+          </p>
+
+
+          <!--
+            WE WILL ADD THE REAL WHATSAPP NUMBER HERE
+            ONCE THE CLIENT GIVES US THE NUMBER.
+          -->
+
+          <a
+            class="button"
+            href="#contact"
+          >
+            Chat With Us on WhatsApp
+          </a>
+
+
+          <div class="contact-details">
+
+            <span>
+              Cape Town, South Africa
+            </span>
+
+            <span>
+              Persian Carpets
+            </span>
+
+            <span>
+              Cleaning &amp; Restoration
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- ======================================
+       FOOTER
+       ====================================== -->
 
   <footer>
-    © 2026 Silk & Wool Weave & Wonder · Persian Carpets · Cleaning & Restoration
+
+    <div class="container">
+
+
+      <div class="footer-main">
+
+
+        <div>
+
+          <div class="footer-brand">
+            Silk &amp; Wool Weave &amp; Wonder
+          </div>
+
+
+          <div class="footer-subtitle">
+            Persian Carpets · Cleaning · Restoration
+          </div>
+
+        </div>
+
+
+
+        <div class="footer-nav">
+
+          <a href="#about">
+            About
+          </a>
+
+          <a href="#services">
+            Services
+          </a>
+
+          <a href="#collection">
+            Carpets
+          </a>
+
+          <a href="#restoration">
+            Restoration
+          </a>
+
+          <a href="#contact">
+            Contact
+          </a>
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 Silk &amp; Wool Weave &amp; Wonder
+        </span>
+
+
+        <span>
+          Cape Town, South Africa
+        </span>
+
+      </div>
+
+
+    </div>
+
   </footer>
+
 
 </body>
 </html>
