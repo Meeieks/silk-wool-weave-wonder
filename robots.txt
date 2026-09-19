@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://meeieks.github.io/silk-wool-weave-wonder/sitemap.xml
