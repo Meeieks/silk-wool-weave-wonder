@@ -35,5 +35,6 @@ function openLightbox(el){lightboxImg.src=el.dataset.full;lightboxImg.alt=el.que
 document.querySelectorAll('.gallery-item,.rest-card').forEach(el=>el.addEventListener('click',()=>openLightbox(el)));
 function closeLightbox(){lightbox.classList.remove('open');lightbox.setAttribute('aria-hidden','true');lightboxImg.src='';document.body.style.overflow=''}
 document.querySelector('.close').addEventListener('click',closeLightbox);lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox()});
+const menuCheck=document.getElementById('menu-check');document.querySelectorAll('nav a').forEach(link=>link.addEventListener('click',()=>{menuCheck.checked=false}));
 </script>
 </body></html>
