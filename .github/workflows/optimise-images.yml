@@ -1,4 +1,5 @@
 name: Optimise website images
+# Responsive variants are generated from the current main branch.
 
 on:
   push:
