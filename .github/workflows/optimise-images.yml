@@ -24,28 +24,47 @@ jobs:
           python-version: '3.12'
       - name: Install image tools
         run: pip install Pillow
-      - name: Convert large website images to WebP
+      - name: Create compressed responsive WebP images
         run: |
           python - <<'PY'
           from PIL import Image
           from pathlib import Path
-          targets = ["hero.png", "carpet-1.png", "cleaned-removebg-preview.png", "silk-removebg-preview.png"]
-          for name in targets:
-              path = Path(name)
+
+          jobs = {
+              "hero.png": ([640, 960, 1280, 1600], 76),
+              "carpet-1.png": ([480, 760, 960], 78),
+              "restoration-workshop.webp": ([480, 760], 78),
+              "cleaned-removebg-preview.png": ([480], 78),
+              "silk-removebg-preview.png": ([350], 78),
+          }
+
+          for filename, (widths, quality) in jobs.items():
+              path = Path(filename)
               if not path.exists():
-                  print(f"Skipping missing {name}")
+                  print(f"Skipping missing {filename}")
                   continue
-              with Image.open(path) as im:
-                  if im.mode not in ("RGB", "RGBA"):
-                      im = im.convert("RGBA" if "transparency" in im.info else "RGB")
-                  out = path.with_suffix(".webp")
-                  im.save(out, "WEBP", quality=82, method=6)
-                  print(f"{name}: {path.stat().st_size:,} bytes -> {out.stat().st_size:,} bytes")
+              with Image.open(path) as original:
+                  image = original.convert("RGBA" if "A" in original.getbands() else "RGB")
+                  print(f"{filename}: source {image.width}x{image.height}")
+                  for width in widths:
+                      if width >= image.width:
+                          continue
+                      height = round(image.height * width / image.width)
+                      resized = image.resize((width, height), Image.Resampling.LANCZOS)
+                      out = path.with_name(f"{path.stem}-{width}.webp")
+                      resized.save(out, "WEBP", quality=quality, method=6)
+                      print(f"  {out.name}: {out.stat().st_size:,} bytes ({width}x{height})")
+
+                  # Recompress the full-size WebP fallback as well.
+                  full = path.with_suffix(".webp")
+                  if path.suffix.lower() != ".webp" or full.name != path.name:
+                      image.save(full, "WEBP", quality=quality, method=6)
+                      print(f"  {full.name}: {full.stat().st_size:,} bytes (full size)")
           PY
-      - name: Commit optimised images
+      - name: Commit responsive image assets
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add hero.webp carpet-1.webp cleaned-removebg-preview.webp silk-removebg-preview.webp
-          git diff --cached --quiet || git commit -m "Add optimised WebP image assets"
+          git add '*.webp'
+          git diff --cached --quiet || git commit -m "Add responsive compressed WebP images"
           git push
